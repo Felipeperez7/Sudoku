@@ -8,21 +8,31 @@ package evaluaciontema04;
 /**
  * Esta clase contiene los métodos necesarios para el Sudoku
  * @author Felipe
- * @version 1.0
+ * @version 1.5
  */
 public class Sudoku 
 {
-     // Variables privadas de la clase
+    // Variables privadas de la clase
     
+    /**
+     * Constructor por defecto
+     */
     public Sudoku()
     {
 
     }
     
+    /**
+     * Inicializa un Sudoku
+     */
     public void inicializar()
     {
     }
     
+    /**
+     * Formatea el Sudoku para mostrarlo por pantalla
+     * @return Muestra por pantalla el Sudoku
+     */
     @Override
     public String toString()
     {
@@ -30,28 +40,59 @@ public class Sudoku
     return resultadoFinal;
     }
     
+    /**
+     * Modifica un elemento del Sudoku, si se puede
+     * @param fila Indica la fila del Sudoku
+     * @param columna Indica la columna del Sudoku
+     * @param elemento Indica el número que queremos poner
+     * @throws SudokuException Lanza la exzepción SudokuException
+     */
     public void modificarElemento(int fila, int columna, int elemento) throws SudokuException
     {
 
     }
 
+    /**
+     * Elimina un elemento del Sudoku, si se puede
+     * @param fila Indica la fila del Sudoku
+     * @param columna Indica la columna del Sudoku
+     */
     public void vaciarElemento(int fila, int columna)
     {
 
     }
     
+    /**
+     * Comprobará si un elemento no está repetido en una fila del Sudoku
+     * @param fila Indica la fila del Sudoku
+     * @param elemento Indica el número a comprobar
+     * @return Debuelve false si el elemento está repetido y true si no lo está
+     */
     private boolean comprobarFila(int fila, int elemento)
     {
     boolean resultado = true;
     return resultado;
     }
     
+    /**
+     * Comprueba si un elemento no está repetido en una columna des Sudoku
+     * @param columna Indica la columna del Sudoku
+     * @param elemento Indica el número a comprobar
+     * @return Debuelve flase si el elemento está repetido y true si no lo está
+     */
     private boolean comprobarColumna(int columna, int elemento)
     {
     boolean resultado = true;
     return resultado;
     }
     
+    /**
+     * Comprueba si un elemento no está repetido en el cuadrante del Sudoku al que pertenece
+     * @param fila Indica la fila del Sudoku
+     * @param columna Indica la columna del Sudoku
+     * @param elemento Indica el número a comprobar
+     * @return Debuelve flase si el elemento está repetido y true si no lo está
+     */
     private boolean comprobarCuadrante(int fila, int columna, int elemento)
     {
     boolean resultado = true;
@@ -59,6 +100,13 @@ public class Sudoku
     return resultado;
     }
     
+    /**
+     * Comprobará si se puede insertar un elemento en una posición del Sudoku
+     * @param fila Indica la fila de Sudoku
+     * @param columna Indica la columna del Sudoku
+     * @param elemento Indica el número a comprobar
+     * @return Debuelve flase si el elemento está repetido y true si no lo está
+     */
     private boolean puedoInsertar(int fila, int columna, int elemento)
     {
     boolean resultado = false;
