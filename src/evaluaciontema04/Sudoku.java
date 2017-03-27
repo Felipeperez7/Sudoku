@@ -39,9 +39,30 @@ public class Sudoku
             sudoku.add(filas);
             
         }
-        sudoku.get(0).set(3, 8);
-        System.out.println(sudoku.get(0));
-        System.out.println(sudoku.get(0).get(3));
+        sudoku.get(0).set(0, 5);
+        sudoku.get(0).set(5, 3);
+        sudoku.get(0).set(7, 1);
+        sudoku.get(1).set(4, 7);
+        sudoku.get(1).set(6, 3);
+        sudoku.get(2).set(2, 8);
+        sudoku.get(2).set(3, 4);
+        sudoku.get(2).set(7, 2);
+        sudoku.get(3).set(2, 9);
+        sudoku.get(4).set(3, 9);
+        sudoku.get(4).set(4, 3);
+        sudoku.get(5).set(0, 4);
+        sudoku.get(5).set(1, 7);
+        sudoku.get(5).set(4, 1);
+        sudoku.get(5).set(6, 6);
+        sudoku.get(5).set(7, 8);
+        sudoku.get(6).set(6, 2);
+        sudoku.get(6).set(7, 3);
+        sudoku.get(7).set(2, 2);
+        sudoku.get(7).set(8, 6);
+        sudoku.get(8).set(1, 3);
+        sudoku.get(8).set(4, 8);
+        sudoku.get(8).set(6, 7);
+        sudoku.get(8).set(8, 4);
     }
     
     /**
