@@ -10,19 +10,17 @@ import java.util.ArrayList;
 /**
  * Esta clase contiene los métodos necesarios para el Sudoku
  * @author Felipe
- * @version 2.0
+ * @version 2.1
  */
 public class Sudoku 
 {
     private ArrayList<ArrayList<Integer>> sudoku;
-    private ArrayList<Integer> filas;
     
     /**
      * Constructor por defecto
      */
     public Sudoku()
     {
-        filas = new ArrayList<>();
         sudoku = new ArrayList<>();
     }
     
@@ -33,12 +31,17 @@ public class Sudoku
     {
         for (int i = 0; i < 9; i++) 
         {
+            ArrayList<Integer> filas = new ArrayList<>();
             for (int j = 0; j < 9; j++) 
             {
                 filas.add(0);
             }
             sudoku.add(filas);
+            
         }
+        sudoku.get(0).set(3, 8);
+        System.out.println(sudoku.get(0));
+        System.out.println(sudoku.get(0).get(3));
     }
     
     /**
@@ -48,8 +51,56 @@ public class Sudoku
     @Override
     public String toString()
     {
-    String resultadoFinal = "";
-    return resultadoFinal;
+        String resultadoFinal = "";
+    
+        for (int i = 0; i < 9; i++) 
+        {
+            switch (i)
+            {
+                case 0:
+                    resultadoFinal +="-----------------" + "\n";
+                    break;
+                case 3:
+                    resultadoFinal +="\n" + "-----------------" + "\n";
+                    break;
+                case 6:
+                    resultadoFinal +="\n" + "-----------------" + "\n";
+                    break;
+                default:
+                    resultadoFinal += "\n";
+                    break;
+            }
+            for (int j = 0; j < 9; j++) 
+            {
+                String numeros = "";
+                
+                if (sudoku.get(i).get(j) == 0)
+                    numeros = "-";
+                else
+                    numeros = String.valueOf(sudoku.get(i).get(j));
+                
+                switch (j)
+                {
+                    case 0:
+                        resultadoFinal += "||" + numeros;
+                        break;
+                    case 2:
+                        resultadoFinal += numeros + "||";
+                        break;
+                    case 5:
+                        resultadoFinal += numeros + "||";
+                        break;
+                    case 8:
+                        resultadoFinal += numeros + "||";
+                        break;
+                    default:
+                        resultadoFinal += numeros;
+                        break;
+                }
+            }
+        }
+        resultadoFinal +="\n" + "-----------------" + "\n";
+        return resultadoFinal;
     }
     
     /**
@@ -82,8 +133,8 @@ public class Sudoku
      */
     private boolean comprobarFila(int fila, int elemento)
     {
-    boolean resultado = true;
-    return resultado;
+        boolean resultado = true;
+        return resultado;
     }
     
     /**
@@ -94,8 +145,8 @@ public class Sudoku
      */
     private boolean comprobarColumna(int columna, int elemento)
     {
-    boolean resultado = true;
-    return resultado;
+        boolean resultado = true;
+        return resultado;
     }
     
     /**
@@ -107,9 +158,9 @@ public class Sudoku
      */
     private boolean comprobarCuadrante(int fila, int columna, int elemento)
     {
-    boolean resultado = true;
+        boolean resultado = true;
 
-    return resultado;
+        return resultado;
     }
     
     /**

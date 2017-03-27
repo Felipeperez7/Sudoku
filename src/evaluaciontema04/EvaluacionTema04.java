@@ -19,6 +19,7 @@ public class EvaluacionTema04 {
     {
         Sudoku sudoku = new Sudoku();
         sudoku.inicializar();
+        System.out.println(sudoku.toString());
     }
     
 }
