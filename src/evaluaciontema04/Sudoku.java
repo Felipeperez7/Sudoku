@@ -5,21 +5,25 @@
  */
 package evaluaciontema04;
 
+import java.util.ArrayList;
+
 /**
  * Esta clase contiene los métodos necesarios para el Sudoku
  * @author Felipe
- * @version 1.5
+ * @version 2.0
  */
 public class Sudoku 
 {
-    // Variables privadas de la clase
+    private ArrayList<ArrayList<Integer>> sudoku;
+    private ArrayList<Integer> filas;
     
     /**
      * Constructor por defecto
      */
     public Sudoku()
     {
-
+        filas = new ArrayList<>();
+        sudoku = new ArrayList<>();
     }
     
     /**
@@ -27,6 +31,14 @@ public class Sudoku
      */
     public void inicializar()
     {
+        for (int i = 0; i < 9; i++) 
+        {
+            for (int j = 0; j < 9; j++) 
+            {
+                filas.add(0);
+            }
+            sudoku.add(filas);
+        }
     }
     
     /**
