@@ -15,11 +15,10 @@ public class EvaluacionTema04 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) 
+    public static void main(String[] args) throws SudokuException 
     {
-        Sudoku sudoku = new Sudoku();
-        sudoku.inicializar();
-        System.out.println(sudoku.toString());
+        Principal principal = new Principal();
+        principal.ejecutar();
     }
     
 }

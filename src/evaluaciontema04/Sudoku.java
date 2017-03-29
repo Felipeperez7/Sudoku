@@ -133,7 +133,11 @@ public class Sudoku
      */
     public void modificarElemento(int fila, int columna, int elemento) throws SudokuException
     {
-
+        if(!this.puedoInsertar(fila, columna, elemento))
+            throw new SudokuException ("No puedes introducir ese elemento");
+        else
+            sudoku.get(fila).set(columna, elemento);
+        
     }
 
     /**
@@ -143,7 +147,7 @@ public class Sudoku
      */
     public void vaciarElemento(int fila, int columna)
     {
-
+        sudoku.get(fila).set(columna, 0);
     }
     
     /**
@@ -155,6 +159,11 @@ public class Sudoku
     private boolean comprobarFila(int fila, int elemento)
     {
         boolean resultado = true;
+        for (int i = 0; i < 9; i++) 
+        {
+            if (sudoku.get(fila).get(i).equals(elemento))
+                resultado = false;
+        }
         return resultado;
     }
     
@@ -167,6 +176,11 @@ public class Sudoku
     private boolean comprobarColumna(int columna, int elemento)
     {
         boolean resultado = true;
+        for (int i = 0; i < 9; i++) 
+        {
+            if (sudoku.get(i).get(columna).equals(elemento))
+                resultado = false;
+        }
         return resultado;
     }
     
@@ -180,7 +194,7 @@ public class Sudoku
     private boolean comprobarCuadrante(int fila, int columna, int elemento)
     {
         boolean resultado = true;
-
+        
         return resultado;
     }
     
@@ -193,7 +207,9 @@ public class Sudoku
      */
     private boolean puedoInsertar(int fila, int columna, int elemento)
     {
-    boolean resultado = false;
-    return resultado;
+        boolean resultado = true;
+        if(this.comprobarColumna(columna, elemento) && this.comprobarFila(fila, elemento) && this.comprobarCuadrante(fila, columna, elemento))
+            resultado = false;
+        return resultado;
     }
 }
